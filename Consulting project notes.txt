@@ -1,0 +1,15 @@
+A Thinking Ape -- ad bidding optimization, clear data set, labelled data
+1. Confident Cannabis -- classify/regress chemical analysis to experience, lots of data
+2. Craft Coffee -- existing coffee preferences to measured values of coffee
+Goldbean -- personalizing investment
+Green Toe -- estimate probability of bid being accepted
+Next Caller -- optimize time/price/accuracy for retrieving data from white pages resellers
+Quartet Health -- 
+Sliced Investing -- Needs domain specific skills
+Zidisha -- micro-loans, very unclear
+
+
+Nos:
+Green Toe
+Sliced Investing
+SmartAsset

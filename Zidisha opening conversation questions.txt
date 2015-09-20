@@ -1,0 +1,68 @@
+Zidisha
+Predicting borrower application rates
+
+A detailed description of the problem.
+Help us determine the extent to which the following factors affect the volume of new borrower applications in each country: new applicant acceptance rates, first loan size, membership fee amount, successful loan application funding rates, average time to funding, average time to disbursement, invite bonus amounts for existing borrowers, and maximum number of invitees allowed at a time per borrower.
+
+A description of what you would like the deliverable to be (in other words, what does a win look like?)
+For each of the factors listed above, report the degree to which it correlates with subsequent changes in new borrower application volume, both in aggregate and by country.
+
+How Zidisha plans to implement the result.
+We often seek to maintain supply-demand balance in our marketplace by changing parameters intended to limit or encourage new borrower applications.  This will inform what type of change we make - for example, will credit limit bonus increases be more effective at encouraging more new borrowers if we award them to the inviters, or the invitees?
+
+A description of the data (i.e. schema,  how the Fellow will receive access to the data)
+We can provide direct read access to our MySQL database, and can liaise with the Fellows to explain the schema and help with questions as needed.
+
+
+
+
+
+What is driving new borrowers?
+
+Given that new borrowers seem like they are often invited by existing borrowers, is the rate of new borrowers highly correlated with the success of recent loans?
+
+(A guess:) It is desirable to balance number of new borrowers with the rate that new loans are being funded (avoid spreading money around to the point that no loans are fulfilled and borrowers are discouraged).
+
+Zidisha parameters:
+-New applicant acceptance rates
+-First loan size
+-Membership fee amount
+-Successful loan application funding rates
+-Average time to funding
+-Average time to disbursement
+-Invite bonus amounts for existing borrowers
+-Maximum number of invitees allowed at a time per borrower
+
+Confounding variables:
+-Local or country-wide economic growth of borrowers country
+-Potentially economic growth in lender countries
+
+
+Zidisha parameters, what are they?
+-New applicant acceptance rates
+How is this different from borrower acceptance?
+
+-First loan size
+Does this mean the current limit of USD 100? Has it ever changed?
+Has the USD 50 limit for non-invited borrowers always been in place?
+Is it different across countries?
+Could we treat it as effectively changed due to exchange rate changes?
+
+-Membership fee amount
+Has this ever changed from USD 10-12? Is this fixed in local currency?
+
+-Successful loan application funding rates
+What does success refer to? That the loan was accepted by Zidisha or that it was fully funded or that it was fully repaid?
+Rate is how many loans are fully funded per time period?
+
+-Average time to funding
+This seems clear. Is there more granular data?
+
+-Average time to disbursement
+What are the delays between full funding and disbursement, do they vary?
+
+-Invite bonus amounts for existing borrowers
+Does this vary based on the rank of the borrower? Have you ever varied it?
+
+-Maximum number of invitees allowed at a time per borrower
+
