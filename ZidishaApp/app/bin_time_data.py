@@ -19,9 +19,9 @@ def bin_centers_from_edges_time(bin_edges: pd.DatetimeIndex) -> pd.DatetimeIndex
 def bin_sum_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFrame:
     """
     Sums data into the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: DatetimeIndex
-    :param data: DataFrame
-    :return: DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data: Data to be binned as a DataFrame
+    :return: Binned data in a DataFrame
     """
     bin_centers = bin_centers_from_edges_time(bin_edges)
     data_ordered = data.sort_index()
@@ -47,9 +47,9 @@ def bin_sum_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFram
 def bin_count_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFrame:
     """
     Counts the number of elements in data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: DatetimeIndex
-    :param data: DataFrame
-    :return: DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data: Data to be binned as a DataFrame
+    :return: Binned data in a DataFrame
     """
     data_time_series = data.index
     data_unit = pd.DataFrame({'data': 1}, index=data_time_series)
@@ -61,9 +61,9 @@ def bin_count_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFr
 def bin_mean_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFrame:
     """
     Calculates the mean of the data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: DatetimeIndex
-    :param data: DataFrame
-    :return: DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data: Data to be binned as a DataFrame
+    :return: Binned data in a DataFrame
     """
     bin_centers = bin_centers_from_edges_time(bin_edges)
     data_ordered = data.sort_index()
@@ -97,9 +97,9 @@ def bin_mean_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFra
 def bin_median_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataFrame:
     """
     Calculates the median of the data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: DatetimeIndex
-    :param data: DataFrame
-    :return: DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data: Data to be binned as a DataFrame
+    :return: Binned data in a DataFrame
     """
     bin_centers = bin_centers_from_edges_time(bin_edges)
     data_ordered = data.sort_index()
@@ -131,4 +131,34 @@ def bin_median_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame) -> pd.DataF
 
     return binned_data
 
+
+dict_bin_type_func = {'sum': bin_sum_time, 'count': bin_count_time, 'mean': bin_mean_time, 'median': bin_median_time}
+
+def bin_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, bin_type: str='sum'):
+    """
+    Calculates the indicated binning operation into the bins given by bin_edges for all DataFrames in the input list
+    and returns a list of DataFrames with the indices centered on the bins
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data_list: Data to be binned as a list of DataFrames
+    :param bin_type: Type of binning. Default is a sum. Valid inputs are: 'sum', 'count', 'median', 'mean'
+    :return: Binned data in a list of DataFrames
+    """
+    try:
+        bin_func = dict_bin_type_func[bin_type]
+    except KeyError:
+        type_str = ', '.join(dict_bin_type_func.keys())
+        raise ValueError(bin_type+' is not a valid type of binning. Valid types: '+type_str)
+
+    return bin_func(bin_edges, data)
+
+
+def bin_list_time(bin_edges: pd.DatetimeIndex, data_list: list, bin_type: str='sum'):
+    """
+    Calculates the indicated binning operation into the bins given by bin_edges for all DataFrames in the input list
+    and returns a list of DataFrames with the indices centered on the bins
+    :param bin_edges: Edge positions of the bins as DatetimeIndex
+    :param data_list: Data to be binned as a list of DataFrames
+    :param bin_type: Type of binning. Default is a sum. Valid inputs are: 'sum', 'count', 'median', 'mean'
+    :return: Binned data in a list of DataFrames
+    """
 

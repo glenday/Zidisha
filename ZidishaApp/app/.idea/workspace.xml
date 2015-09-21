@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf7cb3eb-a309-4002-a60d-4f5c2fd1571e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/country_name_list.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" afterPath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/query_database.py" afterPath="$PROJECT_DIR$/query_database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin_time_data.py" afterPath="$PROJECT_DIR$/bin_time_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bin_time_data.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bin_time_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin_time_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.64987713">
+              <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -93,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="query_database.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="query_database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/query_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84766585">
+            <state vertical-scroll-proportion="0.0">
               <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
               <folding>
                 <element signature="e#27#36#0" expanded="true" />
@@ -144,6 +142,7 @@
         <option value="$PROJECT_DIR$/SQL_queries/country_list.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/country_name_list.sql" />
         <option value="$PROJECT_DIR$/query_database.py" />
+        <option value="$PROJECT_DIR$/bin_time_data.py" />
       </list>
     </option>
   </component>
@@ -372,7 +371,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442802209547</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed source_query to return a list and added the capability append DataFrames filtered by a list of where filters (e.g. for separating data by countries)">
+      <created>1442839288280</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1442839288280</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -422,7 +427,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented simple class to load DataFrames from SQL queries stored in files and re-index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented simple class to load DataFrames from SQL queries stored in files and re-index" />
+    <MESSAGE value="Changed source_query to return a list and added the capability append DataFrames filtered by a list of where filters (e.g. for separating data by countries)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed source_query to return a list and added the capability append DataFrames filtered by a list of where filters (e.g. for separating data by countries)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -471,16 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL_queries/borrowers_w_countries.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -507,10 +503,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/query_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84766585">
+        <state vertical-scroll-proportion="0.0">
           <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
           <folding>
             <element signature="e#27#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64987713">
+          <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
