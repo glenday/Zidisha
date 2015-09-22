@@ -15,3 +15,4 @@ SELECT  l1.first_loan_date,
         ON b.id = l1.borrower_id
         JOIN countries AS c
         ON c.id = b.country_id
+        ORDER BY l1.first_loan_date

@@ -6,3 +6,4 @@ SELECT  l.created_at,
         JOIN countries AS c
         ON b.country_id = c.id
         WHERE l.raised_percentage = 100
+        ORDER BY l.created_at

@@ -5,3 +5,4 @@ SELECT  l.created_at,
         ON b.id = l.borrower_id
         JOIN countries AS c
         ON b.country_id = c.id
+        ORDER BY l.created_at

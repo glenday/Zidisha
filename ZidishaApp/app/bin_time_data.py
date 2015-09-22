@@ -207,7 +207,7 @@ def bin_data_frame_to_list(df_binned: pd.DataFrame) -> list:
     df_col_labels = df_binned.columns
     list_df = []
     for col_label in df_col_labels:
-        list_df.append(df_binned[col_label])
+        list_df.append(df_binned[col_label].copy(deep=True))
     return list_df
 
 
