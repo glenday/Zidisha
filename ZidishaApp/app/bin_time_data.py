@@ -171,7 +171,7 @@ def bin_list_time(bin_edges: pd.DatetimeIndex, list_df_data: list,
     Calculates the indicated binning operation into the bins given by bin_edges for all DataFrames in the input list
     and returns a list of DataFrames with the indices centered on the bins
     :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data_list: Data to be binned as a list of DataFrames
+    :param list_df_data: Data to be binned as a list of DataFrames
     :param bin_type: Type of binning. Default is a count. Valid inputs are: 'sum', 'count', 'median', 'mean'
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
     :param binned_col_labels: List of strings to use as labels for the binned data column.
@@ -191,13 +191,23 @@ def bin_list_time(bin_edges: pd.DatetimeIndex, list_df_data: list,
     list_df_binned = []
     for df, label in zip(list_df_data, binned_col_labels):
         list_df_binned.append(bin_time(bin_edges, df, bin_type=bin_type, col_to_bin=col_to_bin, binned_col_label=label))
-    '''
-    list_df_binned = [bin_time(bin_edges, df, bin_type, col_to_bin) for df in list_df_data]
-    if binned_col_labels:
-        binned_label = list_df_binned[0].columns[0]
-        for label, df in zip(binned_col_labels, list_df_binned):
-            df.rename(columns={binned_label: label}, inplace=True)
-    '''
 
     return list_df_binned
+
+
+def bin_list_to_data_frame(list_df_binned: list) -> pd.DataFrame:
+    df_labels = []
+    for df in list_df_binned:
+        df_labels.append(df.columns[0])
+    df_all = pd.DataFrame({label: df.iloc[:, 0] for df, label in zip(list_df_binned, df_labels)})
+    return df_all
+
+
+def bin_data_frame_to_list(df_binned: pd.DataFrame) -> list:
+    df_col_labels = df_binned.columns
+    list_df = []
+    for col_label in df_col_labels:
+        list_df.append(df_binned[col_label])
+    return list_df
+
 
