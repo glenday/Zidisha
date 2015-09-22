@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf7cb3eb-a309-4002-a60d-4f5c2fd1571e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/inviter_bonus_amount.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/time_to_funding.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" afterPath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -59,10 +62,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exchange_rates_start.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="time_to_funding.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_funding.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="time_to_disbursement.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inviter_bonus_amount.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SQL_queries/inviter_bonus_amount.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all_loans.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exchange_rates_start.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL_queries/exchange_rates_start.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11056511">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding />
             </state>
@@ -117,6 +160,9 @@
         <option value="$PROJECT_DIR$/SQL_queries/exchange_rates_start.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/country_name_list.sql" />
+        <option value="$PROJECT_DIR$/SQL_queries/time_to_disbusement.sql" />
+        <option value="$PROJECT_DIR$/SQL_queries/time_to_funding.sql" />
+        <option value="$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql" />
       </list>
     </option>
   </component>
@@ -124,7 +170,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
+    <option name="x" value="253" />
     <option name="y" value="23" />
     <option name="width" value="1268" />
     <option name="height" value="934" />
@@ -375,7 +421,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442937571941</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added lag to fits">
+      <created>1442941435167</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1442941435167</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -388,7 +440,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="23" width="1268" height="934" extended-state="0" />
+    <frame x="253" y="23" width="1268" height="934" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -430,7 +482,8 @@
     <MESSAGE value="Added bin_list_time to the bin_time_data module to bin lists of DataFrames with additional options.&#10;&#10;Additional options are defining the column to bin and label for the output." />
     <MESSAGE value="Added code to turn lists to data frames, modified notebook to use this to make plotting easier" />
     <MESSAGE value="Updated all SQL queries to ORDER BY date or first column" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated all SQL queries to ORDER BY date or first column" />
+    <MESSAGE value="Added lag to fits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lag to fits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -452,7 +505,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -489,24 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="208" column="35" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14742015">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL_queries/borrowers_w_countries.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09213759">
@@ -523,6 +558,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/fully_funded_loans.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14742015">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/exchange_rates_start.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/query_database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -533,19 +584,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql">
+    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31326783">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/fully_funded_loans.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14742015">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="208" column="35" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -557,10 +602,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/exchange_rates_start.sql">
+    <entry file="file://$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11056511">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.31326783">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_funding.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/inviter_bonus_amount.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
