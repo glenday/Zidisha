@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf7cb3eb-a309-4002-a60d-4f5c2fd1571e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/inviter_bonus_amount.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL_queries/time_to_funding.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" afterPath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL_queries/all_loans.sql" afterPath="$PROJECT_DIR$/SQL_queries/all_loans.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/query_database.py" afterPath="$PROJECT_DIR$/query_database.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -28,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bin_time_data.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bin_time_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin_time_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.9078624">
               <caret line="208" column="35" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -82,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inviter_bonus_amount.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="inviter_bonus_amount.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL_queries/inviter_bonus_amount.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -96,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -116,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/query_database.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
+              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="31" selection-end-column="76" />
               <folding>
                 <element signature="e#27#36#0" expanded="true" />
               </folding>
@@ -149,13 +148,11 @@
         <option value="$PROJECT_DIR$/binData.py" />
         <option value="$PROJECT_DIR$/fit_model.py" />
         <option value="$PROJECT_DIR$/SQL_queries/country_list.sql" />
-        <option value="$PROJECT_DIR$/query_database.py" />
         <option value="$PROJECT_DIR$/SQL_queries/exchange_rates.sql" />
         <option value="$PROJECT_DIR$/plot_lists.py" />
         <option value="$PROJECT_DIR$/load_Zidisha.py" />
         <option value="$PROJECT_DIR$/bin_time_data.py" />
         <option value="$PROJECT_DIR$/SQL_queries/borrowers_w_countries.sql" />
-        <option value="$PROJECT_DIR$/SQL_queries/all_loans.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/fully_funded_loans.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/exchange_rates_start.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql" />
@@ -163,6 +160,8 @@
         <option value="$PROJECT_DIR$/SQL_queries/time_to_disbusement.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/time_to_funding.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql" />
+        <option value="$PROJECT_DIR$/query_database.py" />
+        <option value="$PROJECT_DIR$/SQL_queries/all_loans.sql" />
       </list>
     </option>
   </component>
@@ -170,7 +169,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
+    <option name="x" value="361" />
     <option name="y" value="23" />
     <option name="width" value="1268" />
     <option name="height" value="934" />
@@ -427,7 +426,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442941435167</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added low pass filtering lag fits to country notebook">
+      <created>1442959895063</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1442959895063</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -440,7 +445,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="23" width="1268" height="934" extended-state="0" />
+    <frame x="361" y="23" width="1268" height="934" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -483,7 +488,8 @@
     <MESSAGE value="Added code to turn lists to data frames, modified notebook to use this to make plotting easier" />
     <MESSAGE value="Updated all SQL queries to ORDER BY date or first column" />
     <MESSAGE value="Added lag to fits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added lag to fits" />
+    <MESSAGE value="Added low pass filtering lag fits to country notebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added low pass filtering lag fits to country notebook" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -574,26 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/query_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
-          <folding>
-            <element signature="e#27#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="208" column="35" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load_Zidisha.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -606,14 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31326783">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -639,6 +617,34 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="31" selection-end-column="76" />
+          <folding>
+            <element signature="e#27#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin_time_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9078624">
+          <caret line="208" column="35" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

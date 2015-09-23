@@ -1,4 +1,6 @@
 SELECT  l.created_at,
+        l.usd_amount,
+        l.raised_percentage,
         c.name AS country_name
         FROM loans AS l
         JOIN borrowers AS b

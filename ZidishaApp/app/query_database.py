@@ -17,6 +17,10 @@ class QueryDatabase(object):
         connect_str = 'mysql+pymysql://'+self.user+':'+self.password+'@'+self.address+'/'+self.database
         self.engine = sql.create_engine(connect_str)
 
+    def string_query(self, query_str: str) -> pd.DataFrame:
+        df = pd.read_sql_query(query_str, self.engine)
+        return df
+
     def source_query(self, query_dir: str, query_file: str,
                      index_col_position: int=0, where_filter_col: str=None, where_filter_list: iter= None) -> list:
         """
