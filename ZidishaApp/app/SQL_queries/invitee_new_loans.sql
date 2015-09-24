@@ -1,5 +1,4 @@
-SELECT  l1.first_loan_date,
-        b.created_at,
+SELECT  first_loan_date,
         l2.usd_amount AS usd_requested,
         l2.raised_percentage/100.0 AS raised_fraction,
         l2.usd_amount * l2.raised_percentage/100.0 AS usd_inflow,
@@ -16,8 +15,9 @@ SELECT  l1.first_loan_date,
         ) AS l1
         JOIN loans AS l2
         ON l1.borrower_id = l2.borrower_id AND l1.first_loan_date = l2.created_at
+        JOIN borrower_invites AS bi
+        ON l1.borrower_id = bi.invitee_id
         JOIN borrowers AS b
         ON b.id = l1.borrower_id
         JOIN countries AS c
         ON c.id = b.country_id
-        ORDER BY l1.first_loan_date

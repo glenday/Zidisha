@@ -35,7 +35,7 @@ def max_new_loan_size(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
     return df_max_new_loan
 
 
-def loan_loss_reserve_fee(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
+def loan_loss_reserve_fee_Kenya(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
     # fee level for Kenya
     df_fee_level = pd.DataFrame({'fee_level': 0}, index=time_bins_center)
     df_fee_level[('2015-02-01'<=df_fee_level.index) & (df_fee_level.index<'2015-04-22')] = 20
@@ -45,3 +45,9 @@ def loan_loss_reserve_fee(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
 
     return df_fee_level
 
+def website_change(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
+
+    df_web_change = pd.DataFrame({'web_change': 0}, index=time_bins_center)
+    df_web_change[('2014-10-10'<=df_web_change.index) & (df_web_change.index<'2015-10-01')] = 1
+
+    return df_web_change
