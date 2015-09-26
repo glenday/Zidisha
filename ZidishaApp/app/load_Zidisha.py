@@ -29,7 +29,7 @@ def max_new_loan_size(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
     df_max_new_loan[('2014-01-01'<=df_max_new_loan.index) & (df_max_new_loan.index<'2014-02-01')] = 150
     #df_max_new_loan[('2014-01-01'<=df_max_new_loan.index) & (df_max_new_loan.index<'2014-02-01')] = 450
     df_max_new_loan[('2014-02-01'<=df_max_new_loan.index) & (df_max_new_loan.index<'2014-11-01')] = 150
-    df_max_new_loan[('2014-11-01'<=df_max_new_loan.index) & (df_max_new_loan.index<'2015-08-01')] = 100
+    df_max_new_loan[('2014-11-01'<=df_max_new_loan.index) & (df_max_new_loan.index<'2015-08-06')] = 100
     df_max_new_loan[('2015-08-06'<=df_max_new_loan.index) & (df_max_new_loan.index<'2015-08-11')] = 125
     df_max_new_loan[('2015-08-11'<=df_max_new_loan.index) & (df_max_new_loan.index<'2015-10-01')] = 150
 

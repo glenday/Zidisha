@@ -51,3 +51,4 @@ class QueryDatabase(object):
                 df_list.append(df[df[where_filter_col] == where_filter])
 
         return df_list
+

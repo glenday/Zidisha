@@ -5,11 +5,11 @@ __author__ = 'alexglenday'
 
 def bin_centers_from_edges_time(bin_edges: pd.DatetimeIndex) -> pd.DatetimeIndex:
     """
-    Calculate bin center positions based on the edge positions of each bin
-    :param bin_edges: DatetimeIndex
-    :return: DatetimeIndex
+    Calculate bin center positions based on the edge positions of each bin.
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :return: Center positions of the bins as DatetimeIndex. Length is one less than edge positions.
     """
-    if bin_edges.freq == None:
+    if bin_edges.freq is None:
         bin_edge_values = bin_edges.values
         return pd.to_datetime(bin_edge_values[:-1] + (bin_edge_values[1:] - bin_edge_values[:-1]) / 2)
     else:
@@ -18,103 +18,70 @@ def bin_centers_from_edges_time(bin_edges: pd.DatetimeIndex) -> pd.DatetimeIndex
 
 def bin_sum_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, col_to_bin: int=0) -> pd.DataFrame:
     """
-    Sums data into the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data: Data to be binned as a DataFrame
+    Sums data into the bins given by bin_edges and returns a DataFrame with the index centered on the bins.
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a DataFrame.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
-    :return: Binned data in a DataFrame
+    :return: Binned data in a DataFrame.
     """
-    bin_centers = bin_centers_from_edges_time(bin_edges)
-    data_ordered = data.sort_index()
-    data_time_series = data_ordered.index
-    data_array = data_ordered.iloc[:, col_to_bin].values
-    data_sum_array = np.zeros(len(bin_centers))
-    data_index = 0
-    data_length = len(data)
-    for i in range(len(bin_centers)):
-        bin_start = bin_edges[i]
-        bin_end = bin_edges[i + 1]
-        while data_index < data_length:
-            data_time = data_time_series[data_index]
-            if bin_start < data_time <= bin_end:
-                data_sum_array[i] += data_array[data_index]
-            elif data_time > bin_end:
-                break
-            data_index += 1
-    binned_data = pd.DataFrame({'data_sum': data_sum_array}, index=bin_centers)
-    return binned_data
+    return bin_general_time(np.sum, bin_edges, data, col_to_bin=col_to_bin, empty_bin_value=0.0)
 
 
 def bin_count_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, col_to_bin: int=0) -> pd.DataFrame:
     """
     Counts the number of elements in data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data: Data to be binned as a DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a DataFrame.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
-    :return: Binned data in a DataFrame
+    :return: Binned data in a DataFrame.
     """
-    data_time_series = data.index
-    data_unit = pd.DataFrame({'data': 1}, index=data_time_series)
-    data_count = bin_sum_time(bin_edges, data_unit, col_to_bin)
-    data_count.rename(columns={'data_sum': 'data_counts'}, inplace=True)
-    return data_count
+    return bin_general_time(len, bin_edges, data, col_to_bin=col_to_bin, empty_bin_value=0.0)
 
 
 def bin_mean_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, col_to_bin: int=0) -> pd.DataFrame:
     """
     Calculates the mean of the data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data: Data to be binned as a DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a DataFrame.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
-    :return: Binned data in a DataFrame
+    :return: Binned data in a DataFrame.
     """
-    bin_centers = bin_centers_from_edges_time(bin_edges)
-    data_ordered = data.sort_index()
-    data_time_series = data_ordered.index
-    data_array = data_ordered.iloc[:, col_to_bin].values
-    data_avg_array = np.zeros(len(bin_centers))
-    data_index = 0
-    bin_size = 0.0
-    data_length = len(data)
-    for i in range(len(bin_centers)):
-        bin_start = bin_edges[i]
-        bin_end = bin_edges[i+1]
-        while data_index < data_length:
-            data_time = data_time_series[data_index]
-            if bin_start < data_time <= bin_end:
-                data_avg_array[i] += data_array[data_index]
-                bin_size += 1.0
-            elif data_time > bin_end:
-                if bin_size > 0:
-                    data_avg_array[i] /= bin_size
-                    bin_size = 0.0
-                else:
-                    data_avg_array[i] = np.nan
-                break
-            data_index += 1
-    binned_data = pd.DataFrame({'data_mean': data_avg_array}, index=bin_centers)
-
-    return binned_data
+    return bin_general_time(np.mean, bin_edges, data, col_to_bin=col_to_bin, empty_bin_value=np.nan)
 
 
 def bin_median_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, col_to_bin: int=0) -> pd.DataFrame:
     """
     Calculates the median of the data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data: Data to be binned as a DataFrame
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a DataFrame.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
-    :return: Binned data in a DataFrame
+    :return: Binned data in a DataFrame.
+    """
+    return bin_general_time(np.median, bin_edges, data, col_to_bin=col_to_bin, empty_bin_value=np.nan)
+
+
+def bin_general_time(bin_function, bin_edges: pd.DatetimeIndex, data: pd.DataFrame,
+                     col_to_bin: int=0, empty_bin_value: np.float64=np.nan) -> pd.DataFrame:
+    """
+    Applies a summary function (e.g. sum, mean, median, len) to segments of the data in the bins given by bin_edges and returns a DataFrame with the index centered on the bins
+    :param bin_function: Summary function (e.g. sum, mean, median, length).
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a DataFrame.
+    :param col_to_bin: Column of the DataFrame to bin. Default is 0.
+    :param empty_bin_value: Value to use in the case that there is no data in a bin. Default is NaN.
+    :return: DataFrame where the first column is the binned data indexed by the centers of the bins.
     """
     bin_centers = bin_centers_from_edges_time(bin_edges)
+    bin_length = len(bin_centers)
     data_ordered = data.sort_index()
     data_time_series = data_ordered.index
     data_array = data_ordered.iloc[:, col_to_bin].values
-    data_median_array = np.zeros(len(bin_centers))
+    data_bin_array = np.zeros(bin_length)
     data_index = 0
     bin_size = 0
     data_bin_start = 0
     data_length = len(data)
-    for i in range(len(bin_centers)):
+    for i in range(bin_length):
         bin_start = bin_edges[i]
         bin_end = bin_edges[i+1]
         while data_index < data_length:
@@ -124,14 +91,14 @@ def bin_median_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame, col_to_bin:
             elif data_time > bin_end:
                 if bin_size > 0:
                     data_bin_end = data_index + 1
-                    data_median_array[i] = np.median(data_array[data_bin_start: data_bin_end])
+                    data_bin_array[i] = bin_function(data_array[data_bin_start: data_bin_end])
                     data_bin_start = data_bin_end
                     bin_size = 0
                 else:
-                    data_median_array[i] = np.nan
+                    data_bin_array[i] = empty_bin_value
                 break
             data_index += 1
-    binned_data = pd.DataFrame({'data_median': data_median_array}, index=bin_centers)
+    binned_data = pd.DataFrame({'data_binned': data_bin_array}, index=bin_centers)
 
     return binned_data
 
@@ -143,13 +110,13 @@ def bin_time(bin_edges: pd.DatetimeIndex, data: pd.DataFrame,
              bin_type: str='count', col_to_bin: int=0, binned_col_label: str=None):
     """
     Calculates the indicated binning operation into the bins given by bin_edges for all DataFrames in the input list
-    and returns a list of DataFrames with the indices centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param data: Data to be binned as a list of DataFrames
-    :param bin_type: Type of binning. Default is a count. Valid inputs are: 'sum', 'count', 'median', 'mean'
+    and returns a list of DataFrames with the indices centered on the bins.
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param data: Data to be binned as a list of DataFrames.
+    :param bin_type: Type of binning. Default is a count. Valid inputs are: 'sum', 'count', 'median', 'mean'.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
     :param binned_col_label: String to use as label for the binned data column.
-    :return: Binned data in a list of DataFrames
+    :return: Binned data in a list of DataFrames.
     """
     try:
         bin_func = dict_bin_type_func[bin_type]
@@ -169,13 +136,13 @@ def bin_list_time(bin_edges: pd.DatetimeIndex, list_df_data: list,
                   bin_type: str='count', col_to_bin: int=0, binned_col_labels: list=None):
     """
     Calculates the indicated binning operation into the bins given by bin_edges for all DataFrames in the input list
-    and returns a list of DataFrames with the indices centered on the bins
-    :param bin_edges: Edge positions of the bins as DatetimeIndex
-    :param list_df_data: Data to be binned as a list of DataFrames
-    :param bin_type: Type of binning. Default is a count. Valid inputs are: 'sum', 'count', 'median', 'mean'
+    and returns a list of DataFrames with the indices centered on the bins.
+    :param bin_edges: Edge positions of the bins as DatetimeIndex.
+    :param list_df_data: Data to be binned as a list of DataFrames.
+    :param bin_type: Type of binning. Default is a count. Valid inputs are: 'sum', 'count', 'median', 'mean'.
     :param col_to_bin: Column of the DataFrame to bin. Default is 0.
     :param binned_col_labels: List of strings to use as labels for the binned data column.
-    :return: Binned data in a list of DataFrames
+    :return: Binned data in a list of DataFrames.
     """
     # Match list lengths
     num_data = len(list_df_data)
@@ -196,6 +163,11 @@ def bin_list_time(bin_edges: pd.DatetimeIndex, list_df_data: list,
 
 
 def bin_list_to_data_frame(list_df_binned: list) -> pd.DataFrame:
+    """
+    Takes a list of DataFrames from a bin_list_time operation and combines them into one DataFrame.
+    :param list_df_binned: List of DataFrames from a bin_list_time operation.
+    :return: DataFrame combined from the input list.
+    """
     df_labels = []
     for df in list_df_binned:
         df_labels.append(df.columns[0])
@@ -204,6 +176,11 @@ def bin_list_to_data_frame(list_df_binned: list) -> pd.DataFrame:
 
 
 def bin_data_frame_to_list(df_binned: pd.DataFrame) -> list:
+    """
+    Takes a DataFrames combined by bin_list_to_data_frame and converts it back into a list.
+    :param df_binned: DataFrames from a bin_list_to_data_frame operation.
+    :return: List of DataFrames extracted from the input.
+    """
     df_col_labels = df_binned.columns
     list_df = []
     for col_label in df_col_labels:
