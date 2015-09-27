@@ -1,3 +1,6 @@
+/*
+List of all country names were borrowers that were accepted came from.
+*/
 SELECT  c.name AS country_name
         FROM borrowers AS b
         JOIN countries AS c

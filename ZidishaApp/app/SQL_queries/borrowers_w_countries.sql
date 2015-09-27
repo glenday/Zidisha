@@ -1,3 +1,9 @@
+/*
+Account creation dates for borrowers who were accepted.
+
+First column must be the time stamp relevant for subsequent columns.
+Last column must be the country name with the title set to country_name.
+*/
 SELECT  b.created_at,
         c.name AS country_name
         FROM borrowers AS b

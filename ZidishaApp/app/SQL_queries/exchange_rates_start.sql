@@ -1,3 +1,9 @@
+/*
+Start dates and rates for all exchange rates.
+
+First column must be the time stamp relevant for subsequent columns.
+Last column must be the country name with the title set to country_name.
+*/
 SELECT  e.start_date,
         e.rate,
         c.name AS country_name

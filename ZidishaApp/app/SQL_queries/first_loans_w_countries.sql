@@ -1,11 +1,21 @@
+/*
+Raised amounts and interest rates for first time loans.
+
+First column must be the time stamp relevant for subsequent columns.
+Last column must be the country name with the title set to country_name.
+*/
 SELECT  l1.first_loan_date,
         b.created_at,
         l2.usd_amount AS usd_requested,
         l2.raised_percentage/100.0 AS raised_fraction,
-        l2.usd_amount * l2.raised_percentage/100.0 AS usd_inflow,
+        l2.raised_usd_amount AS usd_inflow,
         CASE    WHEN l2.raised_percentage = 100 THEN l2.usd_amount
                 ELSE 0
                 END AS usd_secured,
+        l2.lender_interest_rate,
+        l2.status,
+        l2.disbursed_at,
+        l2.repaid_at,
         c.name AS country_name
         FROM (
             SELECT  borrower_id,
