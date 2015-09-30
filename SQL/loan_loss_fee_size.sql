@@ -1,5 +1,5 @@
 /*
-Calculate the invitation bonus
+Calculate the loan loss reserve fee
 */
 SELECT	EXTRACT(YEAR FROM l.created_at) AS year,		-- year
 		EXTRACT(MONTH FROM l.created_at) AS month,	-- month
@@ -14,6 +14,5 @@ SELECT	EXTRACT(YEAR FROM l.created_at) AS year,		-- year
 		ON b.country_id = co.id
 		JOIN exchange_rates AS e
 		ON l.currency_code = e.currency_code AND e.is_current = 1
---		WHERE activation_status != 4	-- status of 4 means rejected
 		GROUP BY year, month, country_name
 		ORDER BY country_name, year, month

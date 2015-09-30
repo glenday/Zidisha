@@ -14,8 +14,11 @@ SELECT  l1.first_loan_date,
                 END AS usd_secured,
         l2.lender_interest_rate,
         l2.status,
-        l2.disbursed_at,
-        l2.repaid_at,
+        CASE    WHEN l2.status = 3 THEN TIMESTAMPDIFF(SECOND, l2.disbursed_at, l2.repaid_at)/86400.0
+
+                ELSE NULL
+                END AS time_to_repay,
+        (l2.paid_amount + l2.loan_loss_reserve_fee + l2.registration_fee) / l2.amount - 1.0 AS fees_fraction,
         c.name AS country_name
         FROM (
             SELECT  borrower_id,
