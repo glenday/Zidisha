@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf7cb3eb-a309-4002-a60d-4f5c2fd1571e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Zidisha_clean_fit.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Zidisha_complex_fit.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Zidisha_organization_by_country-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" afterPath="$PROJECT_DIR$/Zidisha_organization_by_country.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql" afterPath="$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_Zidisha.py" afterPath="$PROJECT_DIR$/load_Zidisha.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../SQL/loan_loss_fee_size.sql" afterPath="$PROJECT_DIR$/../../SQL/loan_loss_fee_size.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../SQL/registration_fee_size.sql" afterPath="$PROJECT_DIR$/../../SQL/registration_fee_size.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fit_model.py" afterPath="$PROJECT_DIR$/fit_lag_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Zidisha_complex_fit.ipynb" afterPath="$PROJECT_DIR$/Zidisha_complex_fit.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -34,7 +28,7 @@
       <file leaf-file-name="bin_time_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin_time_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2236025">
+            <state vertical-scroll-proportion="-2.1304348">
               <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -43,11 +37,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all_loans.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+      <file leaf-file-name="load_Zidisha.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/load_Zidisha.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <caret line="71" column="83" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plot_lists.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_lists.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query_database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/query_database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -83,16 +97,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_Zidisha.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/load_Zidisha.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="83" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fully_funded_loans.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL_queries/fully_funded_loans.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -118,16 +122,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="77" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="time_to_disbursement.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -173,6 +167,7 @@
         <option value="$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql" />
         <option value="$PROJECT_DIR$/SQL_queries/all_loans.sql" />
         <option value="$PROJECT_DIR$/load_Zidisha.py" />
+        <option value="$PROJECT_DIR$/fit_lag_model.py" />
       </list>
     </option>
   </component>
@@ -180,6 +175,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="397" />
     <option name="y" value="23" />
     <option name="width" value="1208" />
     <option name="height" value="925" />
@@ -458,7 +454,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443376322598</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added Zidisha_complex_fit notebook that uses more features and a causal moving average for the lag">
+      <created>1443612990644</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1443612990644</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -471,11 +473,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1208" height="925" extended-state="0" />
-    <editor active="false" />
+    <frame x="397" y="23" width="1208" height="925" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893157" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -484,7 +486,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292978" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28980625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28980625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -520,7 +522,8 @@
     <MESSAGE value="Added fit for countries other than Kenya to the notebook" />
     <MESSAGE value="Updated bin functions to use one common bin sorting and aggregating function" />
     <MESSAGE value="Updated bin functions to use Numpy vectorized code, 30x speed boost" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated bin functions to use Numpy vectorized code, 30x speed boost" />
+    <MESSAGE value="Added Zidisha_complex_fit notebook that uses more features and a causal moving average for the lag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Zidisha_complex_fit notebook that uses more features and a causal moving average for the lag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -561,31 +564,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/query_database.py">
+    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="e#27#36#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fit_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_lists.py">
+    <entry file="file://$PROJECT_DIR$/fit_lag_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
           <folding>
-            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -613,30 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_disbursement.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_funding.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="77" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/invitee_new_loans.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL_queries/first_loans_w_countries.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -653,10 +630,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL_queries/all_loans.sql">
+    <entry file="file://$PROJECT_DIR$/SQL_queries/invitee_new_loans.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL_queries/time_to_funding.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="77" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -669,9 +654,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plot_lists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin_time_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2236025">
+        <state vertical-scroll-proportion="-2.1304348">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
