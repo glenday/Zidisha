@@ -58,6 +58,26 @@ def loan_loss_reserve_fee_Other(time_bins_center: pd.DatetimeIndex) -> pd.DataFr
     return df_fee_level
 
 
+def loan_loss_reserve_fee_indonesia(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
+    # fee level for Indonesia
+    df_fee_level = pd.DataFrame({'fee_level': 0.0}, index=time_bins_center)
+    df_fee_level[('2015-02-10' <= df_fee_level.index) & (df_fee_level.index < '2015-03-06')] = 18
+    df_fee_level[('2015-03-06' <= df_fee_level.index) & (df_fee_level.index < '2015-04-24')] = 7
+    df_fee_level[('2015-04-24' <= df_fee_level.index) & (df_fee_level.index < '2015-11-01')] = 15
+
+    return df_fee_level
+
+
+def loan_loss_reserve_fee_ghana(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
+    # fee level for Ghana
+    df_fee_level = pd.DataFrame({'fee_level': 0.0}, index=time_bins_center)
+    df_fee_level[('2015-02-08' <= df_fee_level.index) & (df_fee_level.index < '2015-03-06')] = 27
+    df_fee_level[('2015-03-06' <= df_fee_level.index) & (df_fee_level.index < '2015-04-24')] = 27
+    df_fee_level[('2015-04-24' <= df_fee_level.index) & (df_fee_level.index < '2015-11-01')] = 27
+
+    return df_fee_level
+
+
 def website_change(time_bins_center: pd.DatetimeIndex) -> pd.DataFrame:
 
     df_web_change = pd.DataFrame({'web_change': 0.0}, index=time_bins_center)

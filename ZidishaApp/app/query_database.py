@@ -1,9 +1,9 @@
-__author__ = 'alexglenday'
 import os
 import numpy as np
 import pandas as pd
 import sqlalchemy as sql
 import pymysql
+__author__ = 'alexglenday'
 
 
 class QueryDatabase(object):

@@ -9,10 +9,10 @@ def bin_centers_from_edges_time(bin_edges: pd.DatetimeIndex) -> pd.DatetimeIndex
     :param bin_edges: Edge positions of the bins as DatetimeIndex.
     :return: Center positions of the bins as DatetimeIndex. Length is one less than edge positions.
     """
-    if bin_edges.freq is None:
+    if bin_edges.freq is None: # not regularly spaced, use average between edges
         bin_edge_values = bin_edges.values
         return pd.to_datetime(bin_edge_values[:-1] + (bin_edge_values[1:] - bin_edge_values[:-1]) / 2)
-    else:
+    else: # evenly spaced, shift by half spacing
         return (bin_edges + (bin_edges[1]-bin_edges[0]) / 2)[:-1]
 
 
