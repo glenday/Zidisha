@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import pandas as pd
 import sqlalchemy as sql
 import pymysql
@@ -24,7 +23,7 @@ class QueryDatabase(object):
     def source_query(self, query_dir: str, query_file: str,
                      index_col_position: int=0, where_filter_col: str=None, where_filter_list: iter= None) -> list:
         """
-
+        Query the database using a file containing the SQL query.
 
         :rtype : list
         :param query_dir: Base directory containing SQL files
