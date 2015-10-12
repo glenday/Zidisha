@@ -73,9 +73,19 @@ class LaggedParameter(object):
                  transition_length: int,
                  shift_size: int=0,
                  filter_type: str='hann'):
+        """
+        Process data to be lagged with a smooth transition determined by the filter type and shift.
+        :param data: Data to be lagged.
+        :param label: Label for data.
+        :param transition_length: Number of points over which the lag transition occurs.
+        :param shift_size: Number of points to shift the data.
+        :param filter_type: Type of filter to use to generate the transition.
+        :raise ValueError: Error if the filter_type is not valid.
+        """
         self.data = data.copy()
         self.label = label
         self.transition_length = transition_length
+        self.window_size = self.transition_length + 1
         self.shift_size = np.round(shift_size)
 
         dict_filter_type_func = {'none': None,
@@ -91,7 +101,7 @@ class LaggedParameter(object):
 
         self.use_shift = self.shift_size > 0
         if filter_func is not None:
-            self.data = filter_func(self.data, self.transition_length)
+            self.data = filter_func(self.data, self.window_size)
 
         if self.use_shift:
             self.data = self.data[:-self.shift_size]
@@ -212,6 +222,10 @@ class LagModel(object):
                 df_dict[self.list_labels[index]] = self.fit_matrix[:, index] * param
             df_parts = pd.DataFrame(df_dict, index=self.time_axis)
             df_parts.plot()
+            if y_label:
+                plt.ylabel(y_label)
+            if x_label:
+                plt.xlabel(x_label)
 
             pd.DataFrame({'Residuals': self.results.resid}, index=self.time_axis).plot()
 
